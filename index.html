@@ -1,24 +1,62 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D-PaiLiTi - AI图生3D模型应用</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3D-PaiLiTi - 图片一键变 3D 模型｜GLB/STL 导出</title>
+
+    <!-- 允许索引 & 规范化链接 -->
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://encoflow.studio/" />
+    <meta name="theme-color" content="#667eea" />
+
+    <!-- 描述 -->
+    <meta name="description" content="3D-PaiLiTi 让你上传图片，一键生成可用 3D 模型，所见即所得，并支持 GLB/STL 导出与在线预览。新手也能快速上手。" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="3D-PaiLiTi" />
+    <meta property="og:title" content="3D-PaiLiTi - 图片一键变 3D 模型" />
+    <meta property="og:description" content="上传图片 → 生成 3D → 实时预览 → 导出 GLB/STL。" />
+    <meta property="og:url" content="https://encoflow.studio/" />
+    <meta property="og:image" content="https://encoflow.studio/og-cover.png" />
+    <meta property="og:image" content="https://encoflow.studio/og-cover.png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <meta property="og:image:alt" content="3D-PaiLiTi：图片一键生成3D模型，实时预览与导出">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="3D-PaiLiTi - 图片一键变 3D 模型" />
+    <meta name="twitter:description" content="上传图片 → 生成 3D → 实时预览 → 导出 GLB/STL。" />
+    <meta name="twitter:image" content="https://encoflow.studio/og-cover.png" />
+
+    <!-- hreflang -->
+    <link rel="alternate" href="https://encoflow.studio/" hreflang="zh-CN" />
+    <link rel="alternate" href="https://encoflow.studio/" hreflang="x-default" />
+
+    <!-- 站点图标 -->
+    <link rel="icon" href="./assets/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="./assets/logo.png" />
+
+    <link rel="preload" as="image" href="./assets/logo.png" imagesrcset="./assets/logo.png 1x" />
+    <link rel="preload" as="image" href="./assets/google_store.png" />
+    <link rel="preload" as="image" href="./assets/apple_store.png" />
+
     <style>
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            box-sizing: border-box
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            overflow-x: hidden;
+            overflow-x: hidden
         }
 
-        /* 动画背景 */
         .bg-animation {
             position: fixed;
             width: 100%;
@@ -26,27 +64,31 @@
             top: 0;
             left: 0;
             z-index: 0;
-            opacity: 0.3;
+            opacity: .3
         }
 
         .bg-animation::before {
-            content: '';
+            content: "";
             position: absolute;
             top: -50%;
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background: radial-gradient(circle, rgba(255, 255, 255, .1) 1px, transparent 1px);
             background-size: 50px 50px;
-            animation: bgMove 20s linear infinite;
+            animation: bgMove 20s linear infinite
         }
 
         @keyframes bgMove {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
+            0% {
+                transform: translate(0, 0)
+            }
+
+            100% {
+                transform: translate(50px, 50px)
+            }
         }
 
-        /* 主容器 */
         .container {
             position: relative;
             z-index: 1;
@@ -57,27 +99,26 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: center
         }
 
-        /* Hero区域 */
         .hero {
             text-align: center;
-            animation: fadeInUp 1s ease-out;
+            animation: fadeInUp 1s ease-out
         }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(30px)
             }
+
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0)
             }
         }
 
-        /* App图标 */
         .app-icon {
             width: 120px;
             height: 120px;
@@ -87,196 +128,203 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
             animation: float 3s ease-in-out infinite;
             position: relative;
-            overflow: hidden;
+            overflow: hidden
         }
 
         .app-icon::before {
-            content: '';
+            content: "";
             position: absolute;
             top: -50%;
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, .3), transparent);
             transform: rotate(45deg);
-            animation: shine 3s infinite;
+            animation: shine 3s infinite
         }
 
         @keyframes shine {
-            0% { transform: rotate(45deg) translateX(-100%); }
-            100% { transform: rotate(45deg) translateX(100%); }
+            0% {
+                transform: rotate(45deg) translateX(-100%)
+            }
+
+            100% {
+                transform: rotate(45deg) translateX(100%)
+            }
         }
 
         .app-icon img {
-            width: 128px;
-            height: 128px;
-            fill: white;
+            width: 120px;
+            height: 120px;
             z-index: 1;
-            position: relative;
+            position: relative
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-10px)
+            }
         }
 
-        /* 标题 */
         h1 {
-            color: white;
+            color: #fff;
             font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 20px;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            letter-spacing: 2px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+            letter-spacing: 2px
         }
 
         .subtitle {
-            color: rgba(255,255,255,0.9);
+            color: rgba(255, 255, 255, .9);
             font-size: 1.3rem;
             margin-bottom: 50px;
             font-weight: 300;
-            line-height: 1.6;
+            line-height: 1.6
         }
 
-        /* 下载按钮区域 */
         .download-buttons {
             display: flex;
             gap: 20px;
             margin-bottom: 60px;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: center
         }
 
         .download-btn {
             display: inline-block;
-            transition: all 0.3s ease;
+            transition: all .3s ease;
+            position: relative
         }
 
         .download-btn:hover {
             transform: translateY(-3px);
-            filter: brightness(1.1);
+            filter: brightness(1.1)
         }
 
         .download-btn img {
             height: 60px;
             width: auto;
-            display: block;
+            display: block
         }
 
-        /* 特性展示 */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-top: 60px;
-            width: 100%;
+            width: 100%
         }
 
         .feature-card {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, .1);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 30px;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, .2);
+            transition: all .3s ease
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
-            background: rgba(255,255,255,0.15);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background: rgba(255, 255, 255, .15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .2)
         }
 
         .feature-icon {
             width: 60px;
             height: 60px;
             margin: 0 auto 20px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, .2);
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
+            font-size: 30px
         }
 
         .feature-title {
-            color: white;
+            color: #fff;
             font-size: 1.2rem;
             margin-bottom: 10px;
-            font-weight: 600;
+            font-weight: 600
         }
 
         .feature-desc {
-            color: rgba(255,255,255,0.8);
-            font-size: 0.95rem;
-            line-height: 1.5;
+            color: rgba(255, 255, 255, .8);
+            font-size: .95rem;
+            line-height: 1.5
         }
 
-        /* 用户群体 */
         .users-section {
             margin-top: 80px;
             text-align: center;
-            width: 100%;
+            width: 100%
         }
 
         .section-title {
-            color: white;
+            color: #fff;
             font-size: 2rem;
             margin-bottom: 40px;
-            font-weight: 600;
+            font-weight: 600
         }
 
         .user-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
-            justify-content: center;
+            justify-content: center
         }
 
         .user-tag {
-            background: rgba(255,255,255,0.2);
-            color: white;
+            background: rgba(255, 255, 255, .2);
+            color: #fff;
             padding: 10px 25px;
             border-radius: 25px;
             font-size: 1rem;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.3);
-            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, .3);
+            transition: all .3s ease
         }
 
         .user-tag:hover {
-            background: rgba(255,255,255,0.3);
-            transform: scale(1.05);
+            background: rgba(255, 255, 255, .3);
+            transform: scale(1.05)
         }
 
-        /* 底部信息栏 */
         footer {
             position: relative;
             z-index: 1;
             width: 100%;
-            background: rgba(0,0,0,0.3);
+            background: rgba(0, 0, 0, .3);
             backdrop-filter: blur(10px);
             padding: 40px 20px;
             margin-top: 100px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, .1)
         }
 
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
-            text-align: center;
+            text-align: center
         }
 
         .footer-logo {
-            color: white;
+            color: #fff;
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 20px;
-            letter-spacing: 1px;
+            letter-spacing: 1px
         }
 
         .footer-links {
@@ -284,167 +332,158 @@
             justify-content: center;
             gap: 30px;
             margin-bottom: 20px;
-            flex-wrap: wrap;
+            flex-wrap: wrap
         }
 
         .footer-link {
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, .85);
             text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
+            font-size: .95rem;
+            transition: color .3s ease;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 8px
         }
 
         .footer-link:hover {
-            color: white;
-        }
-
-        .footer-link svg {
-            width: 16px;
-            height: 16px;
-            fill: currentColor;
+            color: #fff
         }
 
         .footer-divider {
             width: 100%;
             height: 1px;
-            background: rgba(255,255,255,0.1);
-            margin: 30px 0;
+            background: rgba(255, 255, 255, .1);
+            margin: 30px 0
         }
 
         .footer-copyright {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
-            line-height: 1.6;
+            color: rgba(255, 255, 255, .6);
+            font-size: .9rem;
+            line-height: 1.6
         }
 
-        /* 响应式设计 */
-        @media (max-width: 768px) {
+        @media (max-width:768px) {
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.5rem
             }
-            
+
             .subtitle {
-                font-size: 1.1rem;
+                font-size: 1.1rem
             }
-            
+
             .download-buttons {
-                align-items: center;
+                align-items: center
             }
-            
+
             .download-btn img {
-                height: 50px;
+                height: 50px
             }
 
             footer {
-                margin-top: 60px;
+                margin-top: 60px
             }
         }
     </style>
 </head>
+
 <body>
-    <div class="bg-animation"></div>
-    
+    <div class="bg-animation" aria-hidden="true"></div>
+
+    <noscript>
+        本站需要启用 JavaScript 才能获得完整体验，但主要内容仍可浏览。
+    </noscript>
+
     <div class="container">
-        <div class="hero">
-            <!-- App图标 -->
-            <div class="app-icon">
-                <img src="./logo.png" alt="cat" />
+        <div class="hero" role="banner">
+            <!-- App 图标 -->
+            <div class="app-icon" aria-hidden="true">
+                <img src="./assets/logo.png" alt="3D-PaiLiTi 应用图标" width="120" height="120" fetchpriority="high" />
             </div>
-            
+
             <!-- 标题 -->
             <h1>3D-PaiLiTi</h1>
-            <p class="subtitle">AI驱动的图片转3D模型神器<br>让创意瞬间立体化</p>
-            
-            <!-- 下载按钮 -->
-            <div class="download-buttons">
-                <a href="https://play.google.com/store" class="download-btn" target="_blank">
-                    <img src="./google_store.png" alt="cat" />
+            <p class="subtitle">上传图片，一键生成可用 3D 模型｜实时预览与 GLB/STL 导出</p>
+
+            <!-- 下载按钮（用真实商店链接替换） -->
+            <div class="download-buttons" aria-label="下载入口">
+                <a class="download-btn" href="https://play.google.com/store/apps/details?id=YOUR_PACKAGE"
+                    target="_blank" rel="noopener noreferrer" aria-label="前往 Google Play 下载">
+                    <img src="./assets/google_store.png" alt="在 Google Play 获取" width="512" height="153"
+                        loading="lazy" />
                 </a>
-                <a href="https://apps.apple.com" class="download-btn" target="_blank">
-                    <img src="./apple_store.png" alt="cat" />
+                <a class="download-btn" href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank"
+                    rel="noopener noreferrer" aria-label="前往 App Store 下载">
+                    <img src="./assets/apple_store.png" alt="在 App Store 下载" width="512" height="153" loading="lazy" />
                 </a>
             </div>
-            
+
             <!-- 特性展示 -->
             <div class="features">
                 <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <div class="feature-title">AI智能建模</div>
-                    <div class="feature-desc">先进的AI算法，一键将2D图片转换为高质量3D模型</div>
+                    <div class="feature-icon" aria-hidden="true">🎨</div>
+                    <div class="feature-title">AI 智能建模</div>
+                    <div class="feature-desc">先进 AI 算法，一键将 2D 图片转换为高质量 3D 模型</div>
                 </div>
-                
                 <div class="feature-card">
-                    <div class="feature-icon">📦</div>
+                    <div class="feature-icon" aria-hidden="true">📦</div>
                     <div class="feature-title">多格式导出</div>
-                    <div class="feature-desc">支持GLB、STL等主流3D格式，满足不同场景需求</div>
+                    <div class="feature-desc">支持 GLB、STL 等主流 3D 格式，满足不同场景需求</div>
                 </div>
-                
                 <div class="feature-card">
-                    <div class="feature-icon">👁️</div>
+                    <div class="feature-icon" aria-hidden="true">👁️</div>
                     <div class="feature-title">在线预览</div>
-                    <div class="feature-desc">实时360°查看模型，多样化背景随心切换</div>
+                    <div class="feature-desc">实时 360° 查看模型，多样化环境随心切换</div>
                 </div>
-                
                 <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
-                    <div class="feature-title">AI优化</div>
-                    <div class="feature-desc">智能改图功能，让模型生成效果更完美</div>
+                    <div class="feature-icon" aria-hidden="true">🔄</div>
+                    <div class="feature-title">AI 优化</div>
+                    <div class="feature-desc">智能改图与风格化，让生成效果更稳定</div>
                 </div>
-                
                 <div class="feature-card">
-                    <div class="feature-icon">🌐</div>
+                    <div class="feature-icon" aria-hidden="true">🌐</div>
                     <div class="feature-title">一键分享</div>
-                    <div class="feature-desc">轻松分享您的3D作品到社交平台</div>
+                    <div class="feature-desc">轻松分享 3D 作品到社交平台或团队</div>
                 </div>
-                
                 <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
+                    <div class="feature-icon" aria-hidden="true">⚡</div>
                     <div class="feature-title">极速生成</div>
-                    <div class="feature-desc">优化的处理流程，快速获得3D模型</div>
+                    <div class="feature-desc">优化的云端流程，快速获得可用 3D 模型</div>
                 </div>
             </div>
-            
-            <!-- 用户群体 -->
+
+            <!-- 适用人群 -->
             <div class="users-section">
                 <h2 class="section-title">适用人群</h2>
-                <div class="user-tags">
-                    <div class="user-tag">🎮 游戏开发者</div>
-                    <div class="user-tag">🎨 3D建模师</div>
-                    <div class="user-tag">🏗️ 建筑设计师</div>
-                    <div class="user-tag">📐 产品设计师</div>
-                    <div class="user-tag">🎯 模型爱好者</div>
-                    <div class="user-tag">🚀 创意工作者</div>
-                    <div class="user-tag">📚 教育工作者</div>
+                <div class="user-tags" role="list">
+                    <div class="user-tag" role="listitem">🎮 游戏开发者</div>
+                    <div class="user-tag" role="listitem">🎨 3D 建模师</div>
+                    <div class="user-tag" role="listitem">🏗️ 建筑设计师</div>
+                    <div class="user-tag" role="listitem">📐 产品设计师</div>
+                    <div class="user-tag" role="listitem">🎯 模型爱好者</div>
+                    <div class="user-tag" role="listitem">🚀 创意工作者</div>
+                    <div class="user-tag" role="listitem">📚 教育工作者</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 底部信息栏 -->
+    <!-- 页脚 -->
     <footer>
         <div class="footer-content">
             <div class="footer-logo">3D-PaiLiTi</div>
-            
+
             <div class="footer-links">
-                <a href="mailto:admin@encoflow.studio" class="footer-link">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                    </svg>
+                <a href="mailto:admin@encoflow.studio" class="footer-link" aria-label="发送邮件至客服">
                     admin@encoflow.studio
                 </a>
             </div>
 
             <div class="footer-links">
-                <a href="./privacy-policy" class="footer-link">
-                    隐私政策
-                </a>
+                <a href="https://encoflow.studio/privacy" class="footer-link">隐私政策</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScMZq6tEr_K11hH1wsVIxip5zuFvaE0Xr2Vny5K2jEvnDteqQ/viewform?usp=header" class="footer-link">删除账号与数据</a>
             </div>
-            
+
             <div class="footer-divider"></div>
-            
             <div class="footer-copyright">
                 <p>© 2025 3D-PaiLiTi. All rights reserved.</p>
                 <p>Powered by EncoFlow Studio</p>
@@ -452,93 +491,57 @@
         </div>
     </footer>
 
-    <script>
-        // 添加滚动视差效果
+    <script defer>
+        // 轻量交互：滚动视差
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const parallax = document.querySelector('.bg-animation');
-            parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+            if (parallax) parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
         });
 
-        // 添加鼠标跟随效果
-        document.addEventListener('mousemove', (e) => {
-            const x = e.clientX / window.innerWidth - 0.5;
-            const y = e.clientY / window.innerHeight - 0.5;
-            
-            const icon = document.querySelector('.app-icon');
-            if (icon) {
-                icon.style.transform = `translateX(${x * 20}px) translateY(${y * 20}px)`;
-            }
-        });
-
-        // 特性卡片动画
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
+        // 特性卡片入场
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
-                }
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) entry.target.style.animation = 'fadeInUp .6s ease-out forwards';
             });
-        }, observerOptions);
+        }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
 
-        document.querySelectorAll('.feature-card').forEach((card, index) => {
+        document.querySelectorAll('.feature-card').forEach((card, i) => {
             card.style.opacity = '0';
-            card.style.animationDelay = `${index * 0.1}s`;
+            card.style.animationDelay = `${i * 0.1}s`;
             observer.observe(card);
         });
-
-        // 下载按钮点击效果
-        document.querySelectorAll('.download-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                // 添加点击动画
-                this.style.transform = 'scale(0.98)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 200);
-            });
-        });
-
-        // 添加涟漪动画样式
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                from {
-                    transform: scale(0);
-                    opacity: 1;
-                }
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-            
-            .download-btn {
-                position: relative;
-            }
-            
-            .download-btn::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 100%;
-                height: 100%;
-                transform: translate(-50%, -50%);
-                background: rgba(255,255,255,0.1);
-                border-radius: 8px;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            }
-            
-            .download-btn:active::after {
-                opacity: 1;
-            }
-        `;
-        document.head.appendChild(style);
     </script>
+
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "3D-PaiLiTi",
+    "url": "https://encoflow.studio/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://encoflow.studio/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "3D-PaiLiTi",
+    "operatingSystem": "ANDROID, IOS",
+    "applicationCategory": "https://schema.org/MultimediaApplication",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "url": "https://encoflow.studio/",
+    "installUrl": [
+      "https://play.google.com/store/apps/details?id=YOUR_PACKAGE",
+      "https://apps.apple.com/app/idYOUR_APP_ID"
+    ]
+  }
+  </script>
 </body>
+
 </html>
