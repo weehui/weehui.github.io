@@ -1,0 +1,93 @@
+{
+  "home": {
+    "heroTitle": "Encoflow Digital Studio",
+    "features": {
+      "innovation": {
+        "title": "Innovation Driven",
+        "desc": "Integrate cutting-edge AI into every creative project—break boundaries and unlock endless possibilities."
+      },
+      "design": {
+        "title": "Design Aesthetics",
+        "desc": "Pursue exceptional visual experiences—every pixel is carefully crafted to deliver stunning beauty."
+      },
+      "quality": {
+        "title": "Quality Assurance",
+        "desc": "A rigorous quality system—each deliverable reflects our relentless pursuit of excellence."
+      }
+    }
+  },
+  "carousel": {
+    "items": {
+      "pailiti": {
+        "title": "3D-PaiLiTi",
+        "subtitle": "3D-PaiLiTi",
+        "description": "Upload an image and generate a ready-to-use 3D model in one click — preview in real time."
+      },
+      "koala": {
+        "title": "Koala Haventree",
+        "subtitle": "Koala Haventree",
+        "description": "A gentle place for your feelings to land."
+      }
+    }
+  },
+  "pailitiPage": {
+    "title": "3D-PaiLiTi",
+    "subtitle": "Upload an image and generate a ready-to-use 3D model in one click — preview in real time.",
+    "description": "3D-PaiLiTi is an innovative application that leverages advanced AI technology to transform your 2D images into high-quality 3D models. Simply upload a photo, and our intelligent algorithms will automatically generate a detailed 3D model that you can preview in real-time and export for use in various projects. Whether you're a designer, developer, or hobbyist, 3D-PaiLiTi streamlines your creative workflow and opens up new dimensions of possibility.",
+    "features": {
+      "title": "Features",
+      "items": {
+        "ai_modeling": { "title": "AI Smart Modeling", "description": "Advanced AI algorithms to convert 2D images into high-quality 3D models with one click.", "icon": "🎨" },
+        "export": { "title": "Multi-format Export", "description": "Supports mainstream 3D formats like GLB and STL to meet different needs.", "icon": "📦" },
+        "preview": { "title": "Online Preview", "description": "Real-time 360° model viewing with switchable environments.", "icon": "👁️" },
+        "optimization": { "title": "AI Optimization", "description": "Intelligent image modification and stylization for more stable results.", "icon": "🔄" },
+        "share": { "title": "One-click Sharing", "description": "Easily share your 3D creations on social media or with your team.", "icon": "🌐" },
+        "fast": { "title": "Fast Generation", "description": "Optimized cloud process to quickly obtain usable 3D models.", "icon": "⚡" }
+      }
+    },
+    "users": {
+      "title": "Target Audience",
+      "tags": [
+        { "title": "Game Developers", "icon": "🎮" },
+        { "title": "3D Modelers", "icon": "🧊" },
+        { "title": "Architects", "icon": "🏛️" },
+        { "title": "Product Designers", "icon": "💡" },
+        { "title": "Model Enthusiasts", "icon": "🧩" },
+        { "title": "Creative Workers", "icon": "🎨" },
+        { "title": "Educators", "icon": "🎓" }
+      ]
+    }
+  },
+  "koalaPage": {
+    "title": "Koala Haventree",
+    "subtitle": "A gentle place for your feelings to land.",
+    "description": "Koala Haventree is a unique mobile game that provides a tranquil and comforting space for relaxation and self-reflection. In this peaceful world, you can grow your own 'emotion trees,' interact with gentle forest creatures, and create a personalized haven. With its soothing art style and calming gameplay, Koala Haventree offers a gentle escape from the hustle and bustle of daily life, helping you find moments of peace and mindfulness.",
+    "features": {
+      "title": "Features",
+      "items": {
+        "emotion_card": { "title": "Emotion Cards", "description": "Draw your exclusive emotion card to explore every fluctuation of your heart.", "icon": "🃏" },
+        "ai_chat": { "title": "AI Chat", "description": "Talk to your cute koala companion anytime and share your joys and sorrows.", "icon": "💬" },
+        "venting_hole": { "title": "Tree Hollow", "description": "Safely entrust all unhappiness and secrets to the tree hollow to release your mind.", "icon": "🌳" },
+        "diary": { "title": "Journaling", "description": "Record daily life moments and mood stories to treasure your exclusive memories.", "icon": "✍️" },
+        "ai_report": { "title": "AI Report", "description": "Generate professional emotional reports based on your records to help you understand yourself better.", "icon": "📊" },
+        "achievements": { "title": "Achievements", "description": "Unlock unique achievements by collecting cards, chatting, and recording.", "icon": "🏆" }
+      }
+    },
+    "users": {
+      "title": "Target Audience",
+      "tags": [
+        { "title": "Passionate about Journaling", "icon": "📒" },
+        { "title": "Focus on Emotional Wellness", "icon": "❤️" },
+        { "title": "Fast-paced Lifestyle", "icon": "⚡" },
+        { "title": "Seeking Stress Relief", "icon": "🍃" },
+        { "title": "Longing for Companionship", "icon": "🧸" },
+        { "title": "Pursuing Inner Peace", "icon": "🧘" }
+      ]
+    }
+  }
+  ,
+  "footer": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  }
+}

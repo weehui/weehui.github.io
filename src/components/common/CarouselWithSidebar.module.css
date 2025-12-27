@@ -1,0 +1,704 @@
+/* =========================
+   基础布局
+========================= */
+.carouselContainer{
+  display: flex;
+  gap: 0;
+  width: 100%;
+  height: 480px;
+  max-width: 800px;
+  position: relative;
+  background-color: transparent;
+
+  /* 新增：水平居中 */
+  margin-left: auto;
+  margin-right: auto;   /* 等同于 margin: 0 auto; */
+}
+
+/* 主轮播区域 */
+.mainCarousel {
+  flex: 1 1 auto;
+  position: relative;
+  /* 作为绝对定位子元素的参照 */
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 16px 0 0 16px;
+  min-width: 0;
+  /* 防止被 sidebar 挤到 0 宽 */
+  z-index: 1;
+  /* 防止被侧栏覆盖 */
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.mainCarouselDragging {
+  cursor: grabbing;
+}
+
+.slideTrack {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  will-change: transform;
+}
+
+.slide {
+  position: relative;
+  flex: 0 0 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 背景层 */
+.backgroundImage {
+  position: absolute;
+  inset: 0;
+  /* 覆盖整个 mainCarousel */
+  z-index: 0;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.mainCarousel:hover .bgImage {
+  transform: scale(1.05);
+}
+
+/* 遮罩：自下而上渐变，提升文字可读性 */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: #00000010;
+  z-index: 1;
+}
+
+/* 内容层 */
+.content {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  z-index: 2;
+  max-width: 500px;
+}
+
+/* 入场/离场动画（从上到下） */
+.contentEnter {
+  animation: slideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.contentExit {
+  animation: slideUp 0.3s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* 内容内元素 */
+.logoWrapper {
+  margin-bottom: 16px;
+}
+
+.logo {
+  width: auto;
+  height: auto;
+  max-width: 150px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+.subtitle {
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.badge {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   侧栏
+========================= */
+.sidebar {
+  width: 240px;
+  background-color: rgba(26, 26, 26, 0.28);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 0 16px 16px 0;
+
+  /* 隐藏滚动条但可滚动 */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebarItem {
+  position: relative;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-left: 3px solid transparent;
+}
+
+.sidebarItem.hovered {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-left-color: rgba(255, 255, 255, 0.3);
+}
+
+.sidebarItem.active {
+  background-color: rgba(255, 255, 255, 0.10);
+  border-left-color: #00a8e1;
+}
+
+/* 缩略图 */
+.thumbnail {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: rgba(42, 42, 42, 0.35);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.thumbnailImage {
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.2s ease;
+}
+
+.sidebarItem:hover .thumbnailImage {
+  transform: scale(1.1);
+}
+
+/* 标题 */
+.gameTitle {
+  flex: 1;
+  font-size: 17px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.sidebarItem.active .gameTitle {
+  color: #00a8e1;
+}
+
+/* 下载按钮 */
+.downloadButtons { display: flex; gap: 20px; margin-bottom: 60px; flex-wrap: wrap; justify-content: center; }
+.downloadBtn { display: inline-block; transition: all .3s ease; position: relative; }
+.downloadBtn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+.storeImg { height: 50px; width: auto; display: block; margin-right: 5px; }
+
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+/* 侧栏项内进度条（大屏使用） */
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #00a8e1 0%, #0096c9 100%);
+  transition: width 0.05s linear;
+  box-shadow: 0 0 8px rgba(0, 168, 225, 0.5);
+}
+
+/* =========================
+   主进度条（小屏显示）
+========================= */
+.mainProgressBar {
+  /* 默认隐藏（大屏） */
+  display: none;
+}
+
+.mainProgressBarShow {
+  display: block;
+  position: sticky;
+  /* 贴在底部上方，紧挨 sidebar */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.14);
+  z-index: 2;
+  /* 在 sidebar 之上 */
+}
+
+.mainProgressFill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00a8e1 0%, #36d1dc 100%);
+  transition: width 0.05s linear;
+  box-shadow: 0 0 10px rgba(0, 168, 225, 0.45);
+}
+
+/* =========================
+   响应式
+========================= */
+@media (max-width: 1024px) {
+  .carouselContainer {
+    height: 400px;
+  }
+
+  .sidebar {
+    width: 200px;
+  }
+
+  .content {
+    left: 24px;
+    bottom: 24px;
+    max-width: 400px;
+  }
+
+  .thumbnail {
+    width: 48px;
+    height: 48px;
+  }
+
+  .gameTitle {
+    font-size: 16px;
+  }
+}
+
+/* ≤768px：主图区在上、侧栏在下；主进度条显示在二者之间 */
+@media (max-width: 768px) {
+  .carouselContainer {
+    flex-direction: column;
+    /* 纵向排列 */
+    height: auto;
+    /* 自适应高度 */
+  }
+
+  .mainCarousel {
+    height: auto !important;       /* 取消固定高度 */
+    aspect-ratio: 9 / 12;          /* 纵向 9:16 */
+    border-radius: 16px 16px 0 0;
+  }
+
+  /* 小屏启用主进度条 */
+  .mainProgressBar {
+    display: block;
+  }
+
+  /* 底部侧栏：横向滚动、吸附底部、玻璃磨砂 */
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+    max-height: 300px;
+    border-radius: 0 0 16px 16px;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    bottom: 0;
+    z-index: 2;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    background-color: rgba(26, 26, 26, .28);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+
+  .sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .content {
+    left: 20px;
+    bottom: 20px;
+    max-width: calc(100% - 40px);
+  }
+
+  .sidebarItem {
+    flex-direction: column;
+    min-width: 120px;
+    margin-right: 5px;
+    padding: 12px;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  .sidebarItem.active {
+    border-bottom-color: #00a8e1;
+    border-left-color: transparent;
+  }
+
+  .sidebarItem.hovered {
+    border-left-color: transparent;
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .thumbnail {
+    width: 64px;
+    height: 64px;
+  }
+
+  .gameTitle {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  /* 进度条贴底，不要空隙（侧栏内部那条在小屏不显示，由主进度条承担） */
+  .progressBar {
+    display: none;
+    /* 小屏改由主进度条显示 */
+  }
+}
+
+/* ≤480px：进一步紧凑 */
+@media (max-width: 480px) {
+  .mainCarousel {
+    height: 320px;
+    border-radius: 14px 14px 0 0;
+    min-width: 0;
+  }
+
+  .overlay {
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, 0.30) 0%,
+        rgba(0, 0, 0, 0.20) 20%,
+        rgba(0, 0, 0, 0.00) 100%);
+  }
+
+  .content {
+    left: 16px;
+    bottom: 16px;
+    max-width: calc(100% - 32px);
+  }
+
+  .subtitle {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .description {
+    font-size: 15px;
+    line-height: 1.45;
+    margin-bottom: 14px;
+  }
+
+  .badge {
+    font-size: 12px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+  }
+
+  .sidebar {
+    bottom: 0;
+    z-index: 2;
+
+    width: 100%;
+    max-height: 92px;
+    /* 更扁的底栏 */
+    padding: 8px;
+    border-radius: 0 0 14px 14px;
+
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    background-color: rgba(26, 26, 26, 0.32);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    scroll-snap-type: x mandatory;
+  }
+
+  .sidebarItem {
+    flex-direction: column;
+    min-width: 112px;
+    padding: 10px;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    scroll-snap-align: start;
+  }
+
+  .sidebarItem.active {
+    border-bottom-color: #00a8e1;
+  }
+
+  .thumbnail {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+  }
+
+  .gameTitle {
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.3;
+  }
+
+  /* 主进度条依旧贴底，无空隙 */
+  .mainProgressBarShow {
+    height: 3px;
+    bottom: 0;
+  }
+
+  .storeImg { height: 40px; width: auto; display: block; }
+}
+
+/* ≤400px */
+@media (max-width: 400px) {
+  .mainCarousel {
+    height: 300px;
+  }
+
+  .subtitle {
+    font-size: 22px;
+    font-weight: 800;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .sidebar {
+    max-height: 86px;
+    padding-bottom: 10px;
+  }
+
+  .sidebarItem {
+    min-width: 104px;
+  }
+
+  .thumbnail {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+/* ≤360px */
+@media (max-width: 360px) {
+  .mainCarousel {
+    height: 276px;
+  }
+
+  .content {
+    left: 14px;
+    bottom: 14px;
+    max-width: calc(100% - 28px);
+  }
+
+  .description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .sidebar {
+    max-height: 80px;
+  }
+
+  .sidebarItem {
+    min-width: 96px;
+  }
+
+  .thumbnail {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* iOS 安全区友好（底部吸附或固定时） */
+@supports (padding: max(0px)) {
+  @media (max-width: 768px) {
+    .sidebar {
+      padding-bottom: max(12px, env(safe-area-inset-bottom));
+    }
+  }
+}
+
+/* 降低动效，照顾 prefers-reduced-motion 用户 */
+@media (prefers-reduced-motion: reduce) {
+
+  .bgImage,
+  .contentEnter,
+  .contentExit,
+  .sidebarItem,
+  .thumbnailImage,
+  .mainProgressFill,
+  .progressFill {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* =========================
+   小屏（≤768px）激活项美化
+   （替代默认生硬的底线）
+========================= */
+@media (max-width: 768px) {
+  .sidebarItem.active {
+    position: relative;
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0.04) 100%);
+    border-bottom-color: transparent;
+    border-radius: 12px;
+    box-shadow:
+      0 2px 10px rgba(0, 0, 0, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .sidebarItem.active:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 4px 14px rgba(0, 0, 0, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.10);
+  }
+
+  .sidebarItem.active .thumbnail {
+    transform: scale(1.04);
+    transition: transform .18s ease, box-shadow .18s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+  }
+
+  .sidebarItem.active .thumbnail::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, rgba(0, 168, 225, .85), rgba(0, 150, 201, .85)) border-box;
+    -webkit-mask:
+      linear-gradient(#000 0 0) padding-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    border: 2px solid transparent;
+    filter: drop-shadow(0 0 8px rgba(0, 168, 225, .45));
+    pointer-events: none;
+  }
+
+  .sidebarItem.active .gameTitle {
+    color: #ffffff;
+    font-weight: 800;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .35);
+  }
+}
+
+/* ≤480px：激活态细节再压一档 */
+@media (max-width: 480px) {
+  .sidebar {
+    max-height: 112px;            /* 保持不变 */
+  }
+
+  .sidebarItem {
+    padding: 6px 8px;            /* 10px -> 6px */
+    gap: 6px;                    /* 12px -> 6px */
+  }
+
+  .thumbnail {
+    width: 48px;                 /* 56px -> 48px */
+    height: 48px;
+  }
+
+  .gameTitle {
+    font-size: 13px;
+    margin-top: 5;
+    -webkit-line-clamp: 2;       /* 保留两行 */
+  }
+}
+
+/* =========================
+   Swipe
+========================= */
+.swipeWrapper {
+  display: flex;
+  height: 100%;
+  will-change: transform;
+}
+
+.slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.mainCarousel.isSwiping .bgImage {
+  transform: none !important; /* Important to override hover effect */
+}

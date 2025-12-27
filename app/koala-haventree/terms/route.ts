@@ -1,0 +1,191 @@
+export const dynamic = "force-static";
+
+export async function GET() {
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Koala Haventree — Terms of Service</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6;color:#111;margin:0;padding:2rem;max-width:900px}
+    h1,h2,h3{line-height:1.25}
+    h1{margin-top:0}
+    .muted{color:#555}
+    ul{margin:0 0 1rem 1.25rem}
+    a{color:#0b57d0;text-decoration:none}
+    a:hover{text-decoration:underline}
+    hr{border:none;border-top:1px solid #e5e7eb;margin:2rem 0}
+    .small{font-size:.95rem}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Terms of Service</h1>
+    <p class="muted">
+      Product: <strong>Koala Haventree</strong> &nbsp;|&nbsp; Company: <strong>Encoflow Digital Studio Sdn. Bhd.</strong><br />
+Effective date: <strong>2025-10-20</strong> &nbsp;|&nbsp; Platforms: Android / iOS
+    </p>
+  </header>
+
+  <section>
+    <h2>1. Acceptance of Terms</h2>
+    <p>
+      By downloading, accessing, or using <strong>Koala Haventree</strong> (the “App” or “Service”), you agree to be bound by these Terms of Service (“Terms”).
+      If you do not agree, do not use the Service. These Terms work together with our <a href="./privacy">Privacy Policy</a>, which explains how we collect, use, and share personal data.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Eligibility and Accounts</h2>
+    <ul>
+      <li>You must have the legal capacity to enter into a contract under the laws of your jurisdiction, or use the Service with verifiable parental consent if you are a minor.</li>
+      <li>You are responsible for your account credentials, device security, and any activities under your account.</li>
+      <li>We may suspend or terminate access to protect users, prevent fraud or abuse, or comply with law.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. License and Intellectual Property</h2>
+    <p>
+      We grant you a personal, non-exclusive, non-transferable, revocable license to use the App for its intended purposes.
+      All rights, title, and interest in and to the App (including software, UI, trademarks, and content) are owned by Encoflow Digital Studio Sdn. Bhd. or its licensors.
+      You may not copy, modify, reverse engineer, attempt to bypass security or payment mechanisms, or use the Service to build competing products.
+    </p>
+  </section>
+
+  <section>
+    <h2>4. User Content and Generated Content</h2>
+    <p>
+      You are responsible for content you upload, submit, or generate using the Service (including text, images, and other materials).
+      You represent that you have all rights necessary to use and share such content.
+      Do not post or generate content that is illegal, infringing, defamatory, pornographic (including content involving minors), hateful, terroristic, privacy-violating, or malicious.
+    </p>
+    <p>
+      You retain ownership of your content. You grant us a limited license to host, process, display, transmit, and transform your content as needed to operate and improve the Service and to provide features you request.
+    </p>
+  </section>
+
+  <section>
+    <h2>5. Copyright &amp; DMCA Notice–Takedown</h2>
+    <p>
+      If you believe content on the Service infringes your copyright, please send a written notice that complies with the Digital Millennium Copyright Act (“DMCA”) to our designated agent.
+      Your notice should include: your signature, identification of the copyrighted work and allegedly infringing material, contact details, a good-faith statement of unauthorized use, and a statement under penalty of perjury that the information is accurate and you are authorized to act.
+      We will respond per applicable law, which may include removing or disabling access to the material and notifying the user who posted it.
+    </p>
+    <p class="small">
+      <strong>Designated Agent</strong> (DMCA): Encoflow Digital Studio Sdn. Bhd. — <a href="mailto:developers@encoflow.studio">developers@encoflow.studio</a><br />
+      Note: Online service providers that wish to rely on DMCA safe harbors should maintain a publicly posted agent and register with the U.S. Copyright Office. Users submitting notices must also consider defenses such as fair use.
+    </p>
+  </section>
+
+  <section>
+    <h2>6. Third-Party Services &amp; SDKs</h2>
+    <p>
+      The App may integrate third-party SDKs and services (e.g., analytics, crash reporting, billing, sign-in). Their terms and privacy practices also apply.
+      See our <a href="./privacy">Privacy Policy</a> for the list of SDKs and data uses.
+    </p>
+  </section>
+
+  <section>
+    <h2>7. Purchases, Subscriptions, and Refunds</h2>
+    <ul>
+      <li>In-app purchases and subscriptions are processed by the platform store (Google Play or Apple App Store). Your transactions are subject to the store’s terms and policies.</li>
+      <li><strong>Google Play:</strong> Developers may issue refunds via the Play Console in line with Google’s refund policies; Google may also issue refunds pursuant to its terms. Some sales may be final except as required by law or store policy.</li>
+      <li><strong>Apple App Store:</strong> You can request refunds via Apple’s <em>Report a Problem</em> website. Refund eligibility and outcomes are determined by Apple’s policies.</li>
+      <li>Unless required by law or store policy, purchases of digital/virtual items are non-refundable and have no cash value. Subscriptions may auto-renew unless canceled before the renewal time shown in the store.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>8. Acceptable Use</h2>
+    <p>In using the Service, you agree not to:</p>
+    <ul>
+      <li>Violate laws or third-party rights, or harvest personal data without consent;</li>
+      <li>Bypass or interfere with security, billing, or access controls;</li>
+      <li>Spam, crawl at scale, stress or attack the Service, or deploy malware;</li>
+      <li>Create, generate, or share material that exploits or harms minors or vulnerable groups.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>9. Privacy</h2>
+    <p>
+      Our <a href="./privacy">Privacy Policy</a> explains what personal information we collect and why, how we use it, the legal bases (where relevant), how long we keep it, and your choices.
+      If we materially change our practices, we will provide appropriate notice consistent with applicable law.
+    </p>
+  </section>
+
+  <section>
+    <h2>10. Disclaimers</h2>
+    <p>
+      To the maximum extent permitted by law, the Service is provided “AS IS” and “AS AVAILABLE.”
+      We do not warrant uninterrupted or error-free operation, or fitness for a particular purpose.
+      We are not responsible for issues caused by third-party services, networks, devices, or app store processes.
+    </p>
+  </section>
+
+  <section>
+    <h2>11. Limitation of Liability</h2>
+    <p>
+      To the maximum extent permitted by law: (a) we shall not be liable for indirect, incidental, special, punitive, or consequential damages, including lost profits, data, or goodwill; and (b) our aggregate liability for all claims relating to the Service shall not exceed the amounts you paid to us for the Service in the twelve (12) months preceding the event giving rise to liability.
+      These limits do not exclude liability that cannot be limited under applicable law.
+    </p>
+  </section>
+
+  <section>
+    <h2>12. Indemnification</h2>
+    <p>
+      You will defend, indemnify, and hold harmless Encoflow Digital Studio Sdn. Bhd. and its affiliates, officers, employees, and partners from any claims, liabilities, damages, losses, and expenses (including reasonable attorneys’ fees) arising from your content, your use of the Service, or your violation of these Terms or applicable law.
+    </p>
+  </section>
+
+  <section>
+    <h2>13. Suspension and Termination</h2>
+    <p>
+      You may stop using the Service at any time and delete the App from your devices.
+      We may suspend or terminate all or part of the Service for violations of these Terms, legal or safety reasons, or to protect users.
+      Sections that by their nature should survive termination (e.g., IP ownership, disclaimers, limitations of liability, indemnity, and dispute resolution) will survive.
+    </p>
+  </section>
+
+  <section>
+    <h2>14. Governing Law and Dispute Resolution</h2>
+    <p>
+      Unless a mandatory law of your country requires otherwise, these Terms are governed by the laws of <strong>Malaysia</strong>, without regard to its conflicts-of-law principles.
+      You agree to the exclusive jurisdiction of the courts located where Encoflow Digital Studio Sdn. Bhd. is established, except where applicable law provides otherwise for consumers.
+    </p>
+  </section>
+
+  <section>
+    <h2>15. Changes to these Terms</h2>
+    <p>
+      We may update these Terms from time to time.
+      For material changes, we will provide notice in-app or by other reasonable means.
+      Your continued use of the Service after the effective date constitutes acceptance of the updated Terms.
+    </p>
+  </section>
+
+  <section>
+    <h2>16. Contact</h2>
+    <p>
+      Encoflow Digital Studio Sdn. Bhd.<br />
+      Email: <a href="mailto:developers@encoflow.studio">developers@encoflow.studio</a><br />
+      Website: <a href="https://encoflow.studio">encoflow.studio</a>
+    </p>
+  </section>
+
+  <hr />
+  <p class="muted small">
+    © Encoflow Digital Studio Sdn. Bhd. All rights reserved.
+  </p>
+</body>
+</html>
+`;
+
+  return new Response(html, {
+    headers: {
+      "content-type": "text/html; charset=utf-8",
+    },
+  });
+}

@@ -1,0 +1,164 @@
+export const dynamic = "force-static";
+
+export async function GET() {
+  const html = `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Koala Haventree Privacy Policy (Strict Compliance Edition)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans",sans-serif;line-height:1.7;color:#111827;background:#fff;margin:0}
+    .wrap{max-width:900px;margin:40px auto;padding:0 20px}
+    h1{font-size:28px;margin:0 0 8px}
+    h2{font-size:20px;margin:28px 0 12px}
+    p,li{font-size:16px;margin:10px 0}
+    .meta{color:#6b7280;margin-bottom:24px}
+    a{color:#2563eb;text-decoration:none}
+    a:hover{text-decoration:underline}
+    table{border-collapse:collapse;width:100%;margin:12px 0}
+    th,td{border:1px solid #e5e7eb;padding:10px;vertical-align:top;font-size:15px}
+    th{background:#f9fafb;text-align:left}
+    .note{background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin:16px 0}
+    .small{font-size:14px;color:#6b7280}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Koala Haventree Privacy Policy (Strict Compliance Edition)</h1>
+  <div class="meta">
+    Version: v1.0 &nbsp;|&nbsp; Effective date: <strong>2025-10-20</strong> &nbsp;|&nbsp; Last updated: <strong>2025-10-20</strong> &nbsp;|&nbsp; Platforms: Android / iOS
+  </div>
+
+  <p>
+    This Privacy Policy (“Policy”) explains how we collect, use, store, share, and protect your information when you use <strong>Koala Haventree</strong> (the “App”) and related services, as well as the rights and choices you have. We comply with Google Play’s <em>User Data</em> and <em>Data Safety</em> disclosure requirements and provide clear disclosures for sensitive permissions where applicable.
+  </p>
+
+  <h2>1. Information We Collect</h2>
+  <p>Depending on the features you use, we may collect the following categories of information:</p>
+  <ul>
+    <li><strong>Account &amp; identity</strong>: nickname, avatar, email address, and third-party sign-in identifiers (if enabled).</li>
+    <li><strong>Device &amp; logs</strong>: device model, OS version, app version, language, network type, crash / performance diagnostics.</li>
+    <li><strong>Gameplay &amp; preferences</strong>: in-app progress, settings, engagement events, and feature usage (e.g., journaling, chat, cards) to provide and improve the experience.</li>
+    <li><strong>User content (with your input)</strong>: text you write (e.g., notes/journals), messages, and other content you submit; you control what you share.</li>
+    <li><strong>Third-party SDK data</strong>: telemetry collected by integrated SDKs (e.g., analytics, crash reporting, ads) as needed to operate the App.</li>
+  </ul>
+
+  <h2>2. How We Use Information</h2>
+  <ul>
+    <li>Provide, maintain, and improve core features and content.</li>
+    <li>Sync and restore your experience across sessions/devices (if enabled).</li>
+    <li>Troubleshooting and diagnostics (crash analytics, performance monitoring).</li>
+    <li>Security protection and abuse detection.</li>
+    <li>Comply with applicable laws and regulatory requirements.</li>
+  </ul>
+
+  <h2>3. Permissions and Purposes</h2>
+  <p>We request system permissions only when necessary for specific features and only access them after you grant consent. You may revoke permissions anytime in your device settings.</p>
+  <table>
+    <thead><tr><th>Permission</th><th>Purpose</th><th>Optional</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Notifications (if enabled)</td>
+        <td>Reminders, engagement, and important service notices</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Read Media / Photo Picker (if enabled)</td>
+        <td>Let you choose images for avatars or personalization features</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Network</td>
+        <td>Cloud services (sync, updates, diagnostics, optional AI features)</td>
+        <td>Required (for online features)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>4. Storage, Retention, and Security</h2>
+  <ul>
+    <li><strong>Storage</strong>: may be hosted on cloud infrastructure where applicable.</li>
+    <li><strong>Retention</strong>: retained for the minimum period necessary to provide the service or meet legal obligations; diagnostic logs are typically kept for up to <strong>90 days</strong> unless required longer.</li>
+    <li><strong>Security</strong>: transport encryption (HTTPS), access control, and auditing are implemented. No system can guarantee 100% security.</li>
+  </ul>
+
+  <h2>5. Data Deletion &amp; User Requests</h2>
+  <p>
+    You may request deletion of your account or data at any time. Account deletion is a <strong>permanent</strong> action and may result in loss of access to content, credits, and related services. We may perform identity verification to protect your account and prevent unauthorized deletion requests.
+  </p>
+
+  <div class="note">
+    <p style="margin:0">
+      <strong>Account Deletion Request (Preferred):</strong><br />
+      Please submit a deletion request via this form:
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdijVHPGSdSytErk-VUddP6Qoab4rQCnqhDaXCTNR-lPe97vQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
+        Account Deletion Request Form
+      </a>.
+      After our review and verification, we will notify you of the result by email within <strong>7 days</strong>.
+    </p>
+  </div>
+
+  <p>
+    <strong>Alternative method:</strong> You can also contact us at
+    <a href="mailto:developers@encoflow.studio">developers@encoflow.studio</a>
+    to request deletion. Verified requests are typically processed within <strong>30 days</strong>, unless retention is required for legal, billing, fraud prevention, or dispute purposes.
+  </p>
+
+  <p class="small">
+    Please note: Certain data may be retained where required by law or for legitimate business purposes such as fraud prevention, chargebacks, compliance, and dispute resolution, and will be deleted or anonymized when no longer necessary.
+  </p>
+  
+  <h2>6. How We Share Information</h2>
+  <p>We do not sell personal data. We may share data only:</p>
+  <ul>
+    <li>With service providers / SDKs strictly as needed to deliver features (e.g., analytics, crash reporting).</li>
+    <li>For legal compliance when responding to lawful requests.</li>
+    <li>In business transfers (e.g., mergers / reorganizations) under the same policy or subject to new consent.</li>
+  </ul>
+
+  <h2>7. Third-Party SDKs and Purposes</h2>
+  <table>
+    <thead><tr><th>SDK</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>Firebase Analytics / Crashlytics (if enabled)</td><td>Performance, usage analytics, and crash diagnostics</td></tr>
+      <tr><td>Ad SDKs (if enabled)</td><td>Ads delivery and measurement (subject to platform policies)</td></tr>
+      <tr><td>Sign-in / Auth SDKs (if enabled)</td><td>Authentication and account management</td></tr>
+    </tbody>
+  </table>
+
+  <h2>8. Children’s Privacy</h2>
+  <p>We comply with laws protecting minors. For child-directed content, stricter collection limits apply and parental consent is obtained where required.</p>
+
+  <h2>9. Your Rights and Choices</h2>
+  <ul>
+    <li><strong>Access / Correction / Deletion</strong>: via in-app options (where available) or by contacting <a href="mailto:developers@encoflow.studio">developers@encoflow.studio</a>.</li>
+    <li><strong>Permission Management</strong>: revoke media / notification access in device settings at any time.</li>
+  </ul>
+
+  <h2>10. Updates to This Policy</h2>
+  <p>We may update this Policy periodically. Material changes will be notified in-app or on this page. Continued use after updates means you accept the revised version.</p>
+
+  <h2>11. Contact Us</h2>
+  <ul>
+    <li><strong>Data Controller:</strong> Encoflow Digital Studio Sdn. Bhd.</li>
+    <li><strong>Email:</strong> <a href="mailto:developers@encoflow.studio">developers@encoflow.studio</a></li>
+    <li><strong>Privacy Contact:</strong> <a href="mailto:developers@encoflow.studio">developers@encoflow.studio</a></li>
+    <li><strong>Website:</strong> <a href="https://encoflow.studio">https://encoflow.studio</a></li>
+  </ul>
+
+  <hr />
+  <p class="small">
+    Compliance note: Keep this Policy consistent with your Google Play Data Safety form; provide an in-app entry linking to this page; request only necessary permissions and prefer scoped/system pickers for media access.
+  </p>
+</div>
+</body>
+</html>
+`;
+
+  return new Response(html, {
+    headers: {
+      "content-type": "text/html; charset=utf-8",
+    },
+  });
+}
