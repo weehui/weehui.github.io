@@ -1,5 +1,5 @@
 1:"$Sreact.fragment"
-4:I[97367,["./_next/static/chunks/ff1a16fafef87110.js","./_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+4:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
 5:"$Sreact.suspense"
 2:T256c,<!DOCTYPE html>
 <html lang="en">
@@ -181,6 +181,6 @@ Effective date: <strong>2025-10-20</strong> &nbsp;|&nbsp; Platforms: Android / i
   </p>
 </body>
 </html>
-0:{"buildId":"9N8ZjreUUHMoVxFUu3-oc","rsc":["$","$1","c",{"children":[["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],null,"$L3"]}],"loading":null,"isPartial":false}
+0:{"buildId":"Vb01spToA93O_4ROHIaCf","rsc":["$","$1","c",{"children":[["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],null,"$L3"]}],"loading":null,"isPartial":false}
 3:["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]
 6:null
