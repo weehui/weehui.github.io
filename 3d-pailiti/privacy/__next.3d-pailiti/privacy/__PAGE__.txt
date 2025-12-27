@@ -178,6 +178,6 @@
 </div>
 </body>
 </html>
-0:{"buildId":"Vb01spToA93O_4ROHIaCf","rsc":["$","$1","c",{"children":[["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],null,"$L3"]}],"loading":null,"isPartial":false}
+0:{"buildId":"OSVSa8CXRWc3OvfWECmAI","rsc":["$","$1","c",{"children":[["$","div",null,{"style":{"background":"#fff","color":"#111","minHeight":"100vh","position":"relative","zIndex":1},"children":["$","iframe",null,{"title":"3D-PaiLiTi Privacy Policy","srcDoc":"$2","style":{"width":"100%","height":"100vh","border":0,"display":"block","background":"#fff"}}]}],null,"$L3"]}],"loading":null,"isPartial":false}
 3:["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]
 6:null

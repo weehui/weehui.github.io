@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
 4:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
 5:"$Sreact.suspense"
-2:T2540,<!DOCTYPE html>
+2:T2546,<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -32,7 +32,7 @@ Effective date: <strong>2025-10-20</strong> &nbsp;|&nbsp; Platforms: Android / i
     <h2>1. Acceptance of Terms</h2>
     <p>
       By downloading, accessing, or using <strong>Koala Haventree</strong> (the “App” or “Service”), you agree to be bound by these Terms of Service (“Terms”).
-      If you do not agree, do not use the Service. These Terms work together with our <a href="./privacy">Privacy Policy</a>, which explains how we collect, use, and share personal data.
+      If you do not agree, do not use the Service. These Terms work together with our <a href="../privacy/">Privacy Policy</a>, which explains how we collect, use, and share personal data.
     </p>
   </section>
 
@@ -83,7 +83,7 @@ Effective date: <strong>2025-10-20</strong> &nbsp;|&nbsp; Platforms: Android / i
     <h2>6. Third-Party Services &amp; SDKs</h2>
     <p>
       The App may integrate third-party SDKs and services (e.g., analytics, crash reporting, billing, sign-in). Their terms and privacy practices also apply.
-      See our <a href="./privacy">Privacy Policy</a> for the list of SDKs and data uses.
+      See our <a href="../privacy/">Privacy Policy</a> for the list of SDKs and data uses.
     </p>
   </section>
 
@@ -111,7 +111,7 @@ Effective date: <strong>2025-10-20</strong> &nbsp;|&nbsp; Platforms: Android / i
   <section>
     <h2>9. Privacy</h2>
     <p>
-      Our <a href="./privacy">Privacy Policy</a> explains what personal information we collect and why, how we use it, the legal bases (where relevant), how long we keep it, and your choices.
+      Our <a href="../privacy/">Privacy Policy</a> explains what personal information we collect and why, how we use it, the legal bases (where relevant), how long we keep it, and your choices.
       If we materially change our practices, we will provide appropriate notice consistent with applicable law.
     </p>
   </section>
@@ -181,6 +181,6 @@ Effective date: <strong>2025-10-20</strong> &nbsp;|&nbsp; Platforms: Android / i
   </p>
 </body>
 </html>
-0:{"buildId":"Vb01spToA93O_4ROHIaCf","rsc":["$","$1","c",{"children":[["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],null,"$L3"]}],"loading":null,"isPartial":false}
+0:{"buildId":"OSVSa8CXRWc3OvfWECmAI","rsc":["$","$1","c",{"children":[["$","div",null,{"style":{"background":"#fff","color":"#111","minHeight":"100vh","position":"relative","zIndex":1},"children":["$","iframe",null,{"title":"Koala Haventree Terms of Service","srcDoc":"$2","style":{"width":"100%","height":"100vh","border":0,"display":"block","background":"#fff"}}]}],null,"$L3"]}],"loading":null,"isPartial":false}
 3:["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]
 6:null
