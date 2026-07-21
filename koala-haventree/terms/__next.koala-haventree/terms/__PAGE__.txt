@@ -181,6 +181,6 @@ Effective date: <strong>2025-10-20</strong> &nbsp;|&nbsp; Platforms: Android / i
   </p>
 </body>
 </html>
-0:{"buildId":"84fbbJb-9srFXR5jaXaHt","rsc":["$","$1","c",{"children":[["$","div",null,{"style":{"background":"#fff","color":"#111","minHeight":"100vh","position":"relative","zIndex":1},"children":["$","iframe",null,{"title":"Koala Haventree Terms of Service","srcDoc":"$2","style":{"width":"100%","height":"100vh","border":0,"display":"block","background":"#fff"}}]}],null,"$L3"]}],"loading":null,"isPartial":false}
+0:{"buildId":"PdjkkWXpdy0pUX6QI-5SV","rsc":["$","$1","c",{"children":[["$","div",null,{"style":{"background":"#fff","color":"#111","minHeight":"100vh","position":"relative","zIndex":1},"children":["$","iframe",null,{"title":"Koala Haventree Terms of Service","srcDoc":"$2","style":{"width":"100%","height":"100vh","border":0,"display":"block","background":"#fff"}}]}],null,"$L3"]}],"loading":null,"isPartial":false}
 3:["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]
 6:null
